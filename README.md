@@ -1,40 +1,38 @@
 # My Portfolio
 
-React를 활용하여 제작한 개인 포트폴리오 웹사이트입니다.  
-프로젝트 경험과 기술 스택을 시각적으로 정리하여 소개합니다.
+## 소개
+
+개발 프로젝트 경험과 기술 스택을 한눈에 보여줄 수 있도록 구성한
+개인 포트폴리오 웹 애플리케이션입니다.
+
+프로젝트 카드 기반 UI와 모달 상세 페이지를 통해
+각 프로젝트 정보를 직관적으로 확인할 수 있도록 구현했습니다.
 
 Live Demo: https://portfolio-sandy-delta-83.vercel.app/
 
 ---
 
-## Tech Stack
+## 기술 스택
 
-### Frontend
-- React
-- JavaScript
-- CSS
-
-### Tools
-- Git
-- GitHub
-- Vercel
+- Frontend: React, JavaScript, CSS
+- Tools: Git, GitHub, Vercel
 
 ---
 
-## Features
+## 주요 기능
 
-- 프로젝트를 카드 형태로 시각적으로 표현
-- 모달을 통한 상세 프로젝트 정보 제공
-- 섹션별 스크롤 네비게이션
-- 반응형 UI 디자인
-- GitHub 및 연락처 링크 연결
+- 프로젝트 카드 기반 목록 UI 구현
+- 모달을 통한 프로젝트 상세 정보 제공
+- 섹션별 스크롤 네비게이션 구성
+- 반응형 UI 디자인 적용
+- GitHub 및 외부 링크 연결 기능
 
 ---
 
-## What I Learned
+## 핵심 구현 포인트
 
 - React 컴포넌트 구조 설계 방법
-- 상태 관리와 props 전달 방식
-- 모달 및 UI 인터랙션 구현
-- CSS 레이아웃 및 반응형 디자인
-- GitHub와 Vercel을 통한 배포 과정
+- useState를 활용한 모달 상태 관리
+- Props를 이용한 데이터 전달 구조 구현
+- CSS를 활용한 반응형 레이아웃 구성
+- Vercel을 통한 배포 및 GitHub 연동
