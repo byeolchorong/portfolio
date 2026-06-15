@@ -1,16 +1,38 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 소개
 
-Currently, two official plugins are available:
+개발 프로젝트 경험과 기술 스택을 한눈에 보여줄 수 있도록 구성한
+개인 포트폴리오 웹 애플리케이션입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+프로젝트 카드 기반 UI와 모달 상세 페이지를 통해
+각 프로젝트 정보를 직관적으로 확인할 수 있도록 구현했습니다.
 
-## React Compiler
+Live Demo: https://portfolio-sandy-delta-83.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 기술 스택
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Frontend: React, JavaScript, CSS
+- Tools: Git, GitHub, Vercel
+
+---
+
+## 주요 기능
+
+- 프로젝트 카드 기반 목록 UI 구현
+- 모달을 통한 프로젝트 상세 정보 제공
+- 섹션별 스크롤 네비게이션 구성
+- 반응형 UI 디자인 적용
+- GitHub 및 외부 링크 연결 기능
+
+---
+
+## 핵심 구현 포인트
+
+- React 컴포넌트 구조 설계 방법
+- useState를 활용한 모달 상태 관리
+- Props를 이용한 데이터 전달 구조 구현
+- CSS를 활용한 반응형 레이아웃 구성
+- Vercel을 통한 배포 및 GitHub 연동
