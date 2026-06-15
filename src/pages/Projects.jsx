@@ -28,7 +28,8 @@ function Projects() {
           "캘린더를 통해 일정과 할 일을 날짜별로 확인할 수 있는 일정 관리 기능",
           "지출 내역 기록 및 구성원 간 단가 비교가 가능한 가계부 기능",
         ],
-        role: `백엔드 개발을 담당하며 데이터베이스 설계와 API 개발에 참여했습니다.
+        role: `백엔드 개발을 중심으로 데이터베이스 설계와 API 개발을 담당했으며,
+          프론트엔드에서는 담당 페이지의 UI 및 기능을 직접 구현하여 백엔드와 자연스럽게 연동되도록 개발했습니다.
           가사노동 기록, 가계부, 캘린더, 통계 기능의 서버 로직을 구현하고 데이터 조회 및 집계 기능을 개발했습니다.`,
         troubleshooting: {
           problem:
@@ -50,19 +51,21 @@ function Projects() {
       image: portfoliologo,
       tech: ["React"],
       desc: "그동안 진행한 프로젝트와 기술 스택, 학습 경험을 한곳에서 확인하고, 개발자로서의 성장 과정을 보여주기 위해 제작한 포트폴리오 사이트입니다.",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/byeolchorong/portfolio",
+      demo: "https://portfolio-sandy-delta-83.vercel.app/",
 
       detail: {
-        background:
-          "프로젝트를 진행하며 다양한 기술과 경험이 쌓였지만, 이를 체계적으로 정리하고 보여줄 수 있는 공간이 필요하다고 생각했습니다. 단순히 결과물을 나열하는 것이 아니라 프로젝트 경험과 학습 과정을 함께 기록하고, 개발자로서의 성장 과정을 전달할 수 있는 포트폴리오를 제작하게 되었습니다.",
+        background: `프로젝트를 진행하며 다양한 기술과 경험이 쌓였지만, 
+        이를 체계적으로 정리하고 보여줄 수 있는 공간이 필요하다고 생각했습니다. 
+          단순히 결과물을 나열하는 것이 아니라 프로젝트 경험과 학습 과정을 함께 기록하고, 
+          개발자로서의 성장 과정을 전달할 수 있는 포트폴리오를 제작하게 되었습니다.`,
         features: [
-          "기술 스택과 프로젝트 경험 소개",
-          "프로젝트 상세 정보 제공",
-          "섹션 기반 원페이지 탐색",
-          "다양한 화면 크기에 대응하는 반응형 UI",
+          "프로젝트와 기술 스택을 한눈에 확인할 수 있도록 카드 기반 UI로 구성",
+          "각 프로젝트의 상세 정보(설명, 역할, 기술 스택)를 모달 형태로 제공",
+          "GitHub 저장소 및 배포 링크를 통해 실제 결과물을 바로 확인 가능",
+          "반응형 UI를 적용하여 다양한 화면 환경에서도 동일한 사용자 경험 제공",
         ],
-        role: "UI 설계, 프론트엔드 개발",
+        role: `기획부터 디자인 구조 설계, UI 개발까지 전 과정을 직접 수행하며 사용자 입장에서 자연스럽게 탐색할 수 있는 포트폴리오 구조를 설계했습니다.`,
       },
     },
 
@@ -70,11 +73,12 @@ function Projects() {
       id: 3,
       title: "Orbit",
       type: "personal",
+      visible: false,
       image: null,
       tech: ["Spring Boot", "JSP", "MySQL"],
       desc: "좋아하는 콘텐츠와 경험을 기록하며 취향을 발견하고 관리하는 플랫폼",
-      github: "",
-      demo: "",
+      github: "#",
+      demo: "#",
 
       detail: {
         background: "",
@@ -98,60 +102,62 @@ function Projects() {
     <section id="projects" className="container">
       <h2>PROJECTS</h2>
       <div className="projects-container">
-        {projects.map((p) => (
-          <article
-            key={p.id}
-            className="project-card"
-            onClick={() => setSelectedProject(p)}
-          >
-            {/* image */}
-            <div className="project-image">
-              {p.image ? <img src={p.image} alt={p.title} /> : "이미지"}
-            </div>
+        {projects
+          .filter((p) => p.visible !== false)
+          .map((p) => (
+            <article
+              key={p.id}
+              className="project-card"
+              onClick={() => setSelectedProject(p)}
+            >
+              {/* image */}
+              <div className="project-image">
+                {p.image ? <img src={p.image} alt={p.title} /> : "이미지"}
+              </div>
 
-            {/* tech */}
-            <div className="project-tech">
-              {p.tech.map((t, i) => (
-                <span key={i}>{t}</span>
-              ))}
-            </div>
+              {/* tech */}
+              <div className="project-tech">
+                {p.tech.map((t, i) => (
+                  <span key={i}>{t}</span>
+                ))}
+              </div>
 
-            {/* title */}
-            <h3 className="project-title">{p.title}</h3>
+              {/* title */}
+              <h3 className="project-title">{p.title}</h3>
 
-            {/* desc */}
-            <p className="project-desc">{p.desc}</p>
+              {/* desc */}
+              <p className="project-desc">{p.desc}</p>
 
-            {/* links */}
-            <div className="project-links">
-              {p.github && (
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  GitHub
-                </a>
-              )}
-              {p.demo && (
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  Live Demo
-                </a>
-              )}
-            </div>
+              {/* links */}
+              <div className="project-links">
+                {p.github && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    GitHub
+                  </a>
+                )}
+                {p.demo && (
+                  <a
+                    href={p.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Live Demo
+                  </a>
+                )}
+              </div>
 
-            {/* type */}
-            <div className={`project-type ${p.type}`}>
-              {p.type === "team" ? "Team Project →" : "Personal Project →"}
-            </div>
-          </article>
-        ))}
+              {/* type */}
+              <div className={`project-type ${p.type}`}>
+                {p.type === "team" ? "Team Project →" : "Personal Project →"}
+              </div>
+            </article>
+          ))}
       </div>
 
       {selectedProject && (
